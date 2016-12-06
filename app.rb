@@ -107,7 +107,7 @@ get "/edit_course" do
 end
 
 get "/search_course" do
-  @courses = course.where(course_name: params["search"])
+  @courses = Course.where(course_name: params["search"])
 
   erb :courses
 end

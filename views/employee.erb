@@ -45,13 +45,13 @@
         <h1>Employee Details</h1>
       </div>
       <ul class="list-group">
-        <li class="list-group-item"><%= @employee.name %></li>
-        <li class="list-group-item"><%= @employee.phone %></li>
-        <li class="list-group-item"><%= @employee.address %></li>
-        <li class="list-group-item"><%= @employee.position %></li>
-        <li class="list-group-item"><%= @employee.monthly_salary %></li>
-        <li class="list-group-item"><%= @employee.slack %></li>
-        <li class="list-group-item"><%= @employee.github %></li>
+        <li class="list-group-item"><strong>Employee Name:</strong>.......................<%= @employee.name %></li>
+        <li class="list-group-item"><strong>Employee Phone:</strong>......................<%= @employee.phone %></li>
+        <li class="list-group-item"><strong>Employee Address:</strong>....................<%= @employee.address %></li>
+        <li class="list-group-item"><strong>Employee Position:</strong>...................<%= @employee.position %></li>
+        <li class="list-group-item"><strong>Employee Monthly Salary:</strong>........<%= @employee.monthly_salary %></li>
+        <li class="list-group-item"><strong>Employee Slack Account:</strong>.........<%= @employee.slack %></li>
+        <li class="list-group-item"><strong>Employee GitHub Account:</strong>.......<%= @employee.github %></li>
       </ul>
       <a href="/edit_employee?id=<%= @employee.id %>" class="btn btn-primary">Edit Employee</a>
     </div>

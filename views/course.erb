@@ -45,15 +45,15 @@
         <h1>Course Details</h1>
       </div>
       <ul class="list-group">
-        <li class="list-group-item"><%= @course.course_name %></li>
-        <li class="list-group-item"><%= @course.subject %></li>
-        <li class="list-group-item"><%= @course.instructor %></li>
-        <li class="list-group-item"><%= @course.start_date %></li>
-        <li class="list-group-item"><%= @course.end_date %></li>
-        <li class="list-group-item"><%= @course.itensive %></li>
-        <li class="list-group-item"><%= @course.credits %></li>
-        <li class="list-group-item"><%= @course.lab %></li>
-        <li class="list-group-item"><%= @course.iron_yard_campus %></li>
+        <li class="list-group-item"><strong>Course Name:</strong>......................<%= @course.course_name %></li>
+        <li class="list-group-item"><strong>Course Subject:</strong>...................<%= @course.subject %></li>
+        <li class="list-group-item"><strong>Course Instructor:</strong>................<%= @course.instructor %></li>
+        <li class="list-group-item"><strong>Course Start Date:</strong>................<%= @course.start_date %></li>
+        <li class="list-group-item"><strong>Course End Date:</strong>..................<%= @course.end_date %></li>
+        <li class="list-group-item"><strong>Is Course Intensive?:</strong>.............<%= @course.intensive %></li>
+        <li class="list-group-item"><strong>Credit Hour Value:</strong>.................<%= @course.credits %></li>
+        <li class="list-group-item"><strong>Requires Lab Work?:</strong>.............<%= @course.lab %></li>
+        <li class="list-group-item"><strong>Located at the Iron Yard?:</strong>.....<%= @course.iron_yard_campus %></li>
       </ul>
       <a href="/edit_course?id=<%= @course.id %>" class="btn btn-primary">Edit Course</a>
     </div>

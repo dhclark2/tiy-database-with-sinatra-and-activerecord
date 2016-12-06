@@ -59,6 +59,7 @@
           <th>Credit Hours</th>
           <th>Lab</th>
           <th>Iron Yard Campus?</th>
+          <th>Options</th>
         </thead>
         <tbody>
           <% @courses.each do |course| %>
@@ -68,7 +69,7 @@
             <td><%= course.instructor %></td>
             <td><%= course.start_date %></td>
             <td><%= course.end_date %></td>
-            <td><%= course.itensive %></td>
+            <td><%= course.intensive %></td>
             <td><%= course.credits %></td>
             <td><%= course.lab %></td>
             <td><%= course.iron_yard_campus %></td>
