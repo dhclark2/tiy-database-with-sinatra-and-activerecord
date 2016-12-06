@@ -91,6 +91,8 @@ get "/courses" do
 end
 
 get "/new_course" do
+  @employees = Employee.where(position: "Instructor")
+
   erb :new_course
 end
 
