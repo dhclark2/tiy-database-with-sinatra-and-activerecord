@@ -9,6 +9,10 @@ ActiveRecord::Base.establish_connection(
   database: "tiy-database"
 )
 
+class Course < ActiveRecord::Base
+  self.primary_key = :id
+end
+
 class Employee < ActiveRecord::Base
   self.primary_key = :id
 
@@ -29,6 +33,7 @@ get "/" do
   erb :home
 end
 
+# EMPLOYEE RELATED OPERATIONS
 get "/employees" do
   @employees = Employee.all
 
@@ -39,25 +44,38 @@ get "/new_employee" do
   erb :new_employee
 end
 
+get "/show_employee" do
+  @employee = Employee.find(params["id"])
+
+  erb :employee
+end
+
+get "/edit_employee" do
+  @employee = Employee.find(params["id"])
+
+  erb :edit_employee
+end
+
+get "/search_employee" do
+  @employees = Employee.where(name: params["search"])
+
+  erb :employees
+end
+
+get "/delete_employee" do
+  employee = Employee.find(params["id"])
+  employee.delete
+
+  redirect to("/employees")
+end
+
 post "/create_employee" do
   Employee.create(params)
 
   redirect to("/employees")
 end
 
-get '/show_employee' do
-  @employee = Employee.find(params["id"])
-
-  erb :employee
-end
-
-get '/edit_employee' do
-  @employee = Employee.find(params["id"])
-
-  erb :edit_employee
-end
-
-post '/update_employee' do
+post "/update_employee" do
   employee = Employee.find(params["id"])
 
   employee.update_attributes(params)
@@ -65,15 +83,52 @@ post '/update_employee' do
   redirect to("/employees")
 end
 
-get '/search_employee' do
-  @employees = Employee.where(name: params["search"])
+# COURSE RELATED OPERATIONS
+get "/courses" do
+  @courses = Course.all
 
-  erb :employees
+  erb :courses
 end
 
-get '/delete_employee' do
-  employee = Employee.find(params["id"])
-  employee.delete
+get "/new_course" do
+  erb :new_course
+end
 
-  redirect to('/employees')
+get "/show_course" do
+  @course = Course.find(params["id"])
+
+  erb :course
+end
+
+get "/edit_course" do
+  @course = Course.find(params["id"])
+
+  erb :edit_course
+end
+
+get "/search_course" do
+  @courses = course.where(course_name: params["search"])
+
+  erb :courses
+end
+
+get "/delete_employee" do
+  course = course.find(params["id"])
+  course.delete
+
+  redirect to("/courses")
+end
+
+post"/create_course" do
+  Course.create(params)
+
+  redirect to ("/courses")
+end
+
+post "/update_course" do
+  course = Course.find(params["id"])
+
+  course.update_attributes(params)
+
+  redirect to("/courses")
 end
