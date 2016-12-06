@@ -85,6 +85,14 @@
           <label for="iron_yard_campus">Iron Yard Campus</label>
           <input type="BOOLEAN" class="form-control" name="iron_yard_campus" placeholder="Iron Yard Campus?">
         </div>
+        <div class="form-group" class="hidden">
+          <label for="employee_id" class="hidden">Employee_ID</label>
+          <select name="employee_id" class = "hidden">
+            <% @employees.each do |employee| %>
+              <option value="<%= employee.id %>"></option>
+             <% end %>
+          </select>
+        </div>
         <button type="submit" class="btn btn-default">Submit</button>
 
       </form>

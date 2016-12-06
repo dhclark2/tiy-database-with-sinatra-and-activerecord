@@ -114,8 +114,8 @@ get "/search_course" do
   erb :courses
 end
 
-get "/delete_employee" do
-  course = course.find(params["id"])
+get "/delete_course" do
+  course = Course.find(params["id"])
   course.delete
 
   redirect to("/courses")

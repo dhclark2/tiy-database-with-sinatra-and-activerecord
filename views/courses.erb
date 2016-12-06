@@ -62,11 +62,12 @@
           <th>Options</th>
         </thead>
         <tbody>
+          
           <% @courses.each do |course| %>
           <tr>
             <td><%= course.course_name %></td>
             <td><%= course.subject %></td>
-            <td><%= course.employee_id %></td>
+            <td><%= course.instructor %></td>
             <td><%= course.start_date %></td>
             <td><%= course.end_date %></td>
             <td><%= course.intensive %></td>
